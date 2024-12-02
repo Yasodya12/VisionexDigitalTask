@@ -8,6 +8,7 @@ class WeatherDataBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }

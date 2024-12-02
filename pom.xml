@@ -55,16 +55,34 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+
+
+
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-testcontainers</artifactId>
+			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<!-- Add this if you are using WebClient -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-webflux</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20230618</version>
 		</dependency>
 		<dependency>
-			<groupId>org.testcontainers</groupId>
-			<artifactId>junit-jupiter</artifactId>
-			<scope>test</scope>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webflux</artifactId>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
