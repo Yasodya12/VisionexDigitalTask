@@ -21,18 +21,19 @@ public class WeatherServiceImpl implements WeatherService {
     @Cacheable(value = "weatherSummary", key = "#city", unless = "#result == null", cacheManager = "cacheManager")
     @Async
     public WeatherData getWeatherSummary(String city) {
-        System.out.println("inside api funtion");
+        System.out.println("getWeatherSummary funtion started");
         String apiResponse = fetchWeatherData(city);
         System.out.println("output in api service layer "+apiResponse);
         if (apiResponse == null) throw new CityNotFoundException(city);
 
         WeatherData weatherData = parseWeatherData(apiResponse);
-        System.out.println("this is weather data "+weatherData);
+        System.out.println("End of executing getWeatherSummary funtion");
         return weatherData;
     }
 
     private String fetchWeatherData(String city) {
         try {
+
             return webClient
                     .get()
                     .uri(uriBuilder -> uriBuilder

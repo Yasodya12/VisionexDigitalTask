@@ -23,14 +23,10 @@ public class WeatherController {
 
     @GetMapping
     public ResponseEntity<WeatherData> getWeatherSummary(@RequestParam String city) {
-        try {
+
             WeatherData summary = weatherService.getWeatherSummary(city);
             return ResponseEntity.ok(summary);
-        } catch (CityNotFoundException ex) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        } catch (ExternalApiException ex) {
-            return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(null);
-        }
+
     }
 
 }
